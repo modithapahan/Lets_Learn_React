@@ -2,21 +2,23 @@ import React from 'react';
 import './App.css';
 
 function App() {
+
+  const age = 42;
+  const isGreen = true;
+  let mango = 420;
+  let apple = 150;
+  const sum = mango + apple;
+
   return (
     <div className="App">
-      <User name="Moditha0" age={22} email="modithapahan0@gmail.com" />
-      <User name="Moditha1" age={22} email="modithapahan1@gmail.com" />
-      <User name="Moditha2" age={22} email="modithapahan2@gmail.com" />
-    </div>
-  );
-}
+      <div>
+        {age >= 18 ? <h4>Over Age</h4> : <h4>Under Age</h4>}
+        <h1 style={{ color: isGreen ? "green" : "red" }}>This is a Boolean.</h1>
+      </div>
 
-const User = (props) => {
-  return (
-    <div class="container mt-4 pt-3">
-      <h4>{props.name}</h4>
-      <h4>{props.age}</h4>
-      <h4>{props.email}</h4>
+      <div>
+        {sum >= 500 ? <h4>Price is too high</h4> : <h4>Price is normal</h4>}
+      </div>
     </div>
   );
 }
