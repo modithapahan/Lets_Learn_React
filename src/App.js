@@ -1,18 +1,20 @@
 import React from "react";
 import "./App.css";
-import User from "./User";
 
 function App() {
-  const users = [
-    { name: "moditha1", age: 22 },
-    { name: "moditha2", age: 23 },
-    { name: "moditha3", age: 23 },
+  const planets = [
+    { name: "mars", isGasPlanet: false },
+    { name: "Earth", isGasPlanet: false },
+    { name: "Jupiter", isGasPlanet: true },
+    { name: "Venus", isGasPlanet: false },
+    { name: "Neptune", isGasPlanet: true },
+    { name: "Uranus", isGasPlanet: true }
   ];
 
   return (
     <div className="container mt-3">
-      {users.map((user, key) => {
-        return <User name={user.name} age={user.age} />
+      {planets.map((planet, key) => {
+        if (planet.isGasPlanet) return <h4>{planet.name}</h4>
       })}
     </div>
   );
