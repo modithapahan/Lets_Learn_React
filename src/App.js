@@ -2,22 +2,16 @@ import { React, useState } from "react";
 import "./App.css";
 
 function App() {
-  const [age, setAge] = useState(0)
+  const [inputValue, setInputValue] = useState("");
 
-  const increseAge = () => {
-    setAge(age+1)
-  } 
-
-  const decreseAge = () => {
-    setAge(age-1)
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
   }
 
   return (
     <div className="container mt-3">
-      {age}&nbsp;
-      <button className="btn btn-primary" onClick={increseAge}>Increse</button>
-      &nbsp;
-      <button className="btn btn-primary" onClick={decreseAge}>Decrese</button>
+      <input type='text' onChange={handleInputChange} />&nbsp;
+      {inputValue}
     </div>
   );
 }
