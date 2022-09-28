@@ -1,10 +1,17 @@
-import React from 'react';
-import './App.css';
+import { React, useState } from "react";
+import "./App.css";
 
 function App() {
+  const [inputValue, setInputValue] = useState("");
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  }
+
   return (
-    <div className="App">
-      <h1>React is easy</h1>
+    <div className="container mt-3">
+      <input type='text' onChange={handleInputChange} />&nbsp;
+      {inputValue}
     </div>
   );
 }
