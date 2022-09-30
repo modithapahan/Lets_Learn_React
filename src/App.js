@@ -2,16 +2,31 @@ import { React, useState } from "react";
 import "./App.css";
 
 function App() {
-  const [inputValue, setInputValue] = useState("");
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+  const [count, setValue] = useState(0);
+
+  const IncreaseValue = () => {
+      setValue(count + 1)
+  }
+
+  const DecreaseValue = () => { 
+      setValue(count - 1)
+  }
+
+  const SetZero = () => {
+    setValue(0)
   }
 
   return (
     <div className="container mt-3">
-      <input type='text' onChange={handleInputChange} />&nbsp;
-      {inputValue}
+      <button className="btn btn-primary" onClick={IncreaseValue}>Increase</button>
+      &nbsp;
+      <button className="btn btn-primary" onClick={DecreaseValue}>Decrease</button>
+      &nbsp;
+      <button className="btn btn-primary" onClick={SetZero}>Set to zero</button>
+    
+      &nbsp;
+      {count}
     </div>
   );
 }
